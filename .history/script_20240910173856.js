@@ -81,47 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         tableBody.appendChild(row);
     });
 
-    // Asignar la función al evento onsubmit del formulario
-    document.getElementById('inspectionForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
-
-        const doc = new jsPDF();
-
-        // Título
-        doc.setFontSize(18);
-        doc.text('Verificación Inspección de Equipos Ensamblados', 20, 20);
-
-        // Información del formulario
-        doc.setFontSize(12);
-        doc.text('Número interno del formulario: F-ADM-051', 20, 30);
-        doc.text('Versión: 01', 20, 40);
-        doc.text('FA: Jun - 2024', 20, 50);
-
-        // Verificación realizada por
-        doc.text('Verificación realizada por:', 20, 60);
-        doc.text('Nombre: ' + document.getElementById('verificador').value, 20, 70);
-        doc.text('Cargo: ' + document.getElementById('cargo').value, 20, 80);
-
-        // Información del Cliente
-        doc.text('Información del Cliente:', 20, 90);
-        doc.text('Cliente: ' + document.getElementById('cliente').value, 20, 100);
-        doc.text('No. Cotización: ' + document.getElementById('cotizacion').value, 20, 110);
-        doc.text('Fecha antes de pintura: ' + document.getElementById('fechaAntesPintura').value, 20, 120);
-        doc.text('Fecha después de pintura: ' + document.getElementById('fechaDespuesPintura').value, 20, 130);
-        doc.text('Tipo de ensamble: ' + document.getElementById('tipoEnsamble').value, 20, 140);
-
-        // Firma Responsable de la inspección
-        doc.text('Firma Responsable de la inspección:', 20, 150);
-        doc.text('Firma: ' + document.getElementById('firma').value, 20, 160);
-        doc.text('Cargo: ' + document.getElementById('cargoFirma').value, 20, 170);
-
-        // Guardar el PDF
-        doc.save('verificacion_inspeccion.pdf');
-
-        // Aquí puedes agregar la lógica para enviar los datos a un servidor si es necesario
-        alert('Formulario enviado correctamente');
-    });
-
 
 
 });
