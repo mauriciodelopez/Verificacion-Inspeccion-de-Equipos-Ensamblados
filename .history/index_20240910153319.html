@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación Inspección de Equipos Ensamblados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VERIFICACIÓN INSPECCIÓN DE EQUIPOS ENSAMBLADOS</h1>
+        <p>Número interno del formulario: F-ADM-051</p>
+        <p>Versión: 01</p>
+        <p>FA: Jun - 2024</p>
+
+        <form id="inspectionForm">
+            <fieldset>
+                <legend>Verificación realizada por:</legend>
+                <label for="verificador">Nombre:</label>
+                <input type="text" id="verificador" name="verificador" required>
+                <label for="cargo">Cargo:</label>
+                <input type="text" id="cargo" name="cargo" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Información del Cliente</legend>
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" name="cliente" value="spirax sarco" readonly>
+                <label for="cotizacion">No. Cotización:</label>
+                <input type="text" id="cotizacion" name="cotizacion" required>
+                <label for="fechaAntesPintura">Fecha antes de pintura:</label>
+                <input type="date" id="fechaAntesPintura" name="fechaAntesPintura" required>
+                <label for="fechaDespuesPintura">Fecha después de pintura:</label>
+                <input type="date" id="fechaDespuesPintura" name="fechaDespuesPintura" required>
+                <label for="tipoEnsamble">Tipo de ensamble:</label>
+                <input type="text" id="tipoEnsamble" name="tipoEnsamble" required>
+            </fieldset>
+
+            <p>Marque con una X el estado según corresponda:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Conforme</th>
+                        <th>No Conforme</th>
+                        <th>No Aplica</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Verificación dimensional con plano (antes de pintura)</td>
+                        <td><input type="checkbox" name="dimensionalConforme"></td>
+                        <td><input type="checkbox" name="dimensionalNoConforme"></td>
+                        <td><input type="checkbox" name="dimensionalNoAplica"></td>
+                        <td><input type="text" name="dimensionalObservaciones"></td>
+                    </tr>
+                    <tr>
+                        <td>b Verificación de paralelismo y perpendicularidad en todas las tuberías del equipo: Línea suministro de vapor</td>
+                        <td><input type="checkbox" name="paralelismoSuministroVaporConforme"></td>
+                        <td><input type="checkbox" name="paralelismoSuministroVaporNoConforme"></td>
+                        <td><input type="checkbox" name="paralelismoSuministroVaporNoAplica"></td>
+                        <td><input type="text" name="paralelismoSuministroVaporObservaciones"></td>
+                    </tr>
+
+                    <!-- Repetir para cada descripción -->
+                    <!-- Ejemplo para una línea -->
+                    <tr>
+                        <td>Línea suministro de vapor</td>
+                        <td><input type="checkbox" name="suministroVaporConforme"></td>
+                        <td><input type="checkbox" name="suministroVaporNoConforme"></td>
+                        <td><input type="checkbox" name="suministroVaporNoAplica"></td>
+                        <td><input type="text" name="suministroVaporObservaciones"></td>
+                    </tr>
+                    <!-- Agregar más filas según sea necesario -->
+                </tbody>
+            </table>
+
+            <fieldset>
+                <legend>Firma Responsable de la inspección</legend>
+                <label for="firma">Firma:</label>
+                <input type="text" id="firma" name="firma" required>
+                <label for="cargoFirma">Cargo:</label>
+                <input type="text" id="cargoFirma" name="cargoFirma" required>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
