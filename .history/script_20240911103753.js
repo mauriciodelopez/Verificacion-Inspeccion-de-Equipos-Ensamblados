@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
 
         const doc = new jsPDF();
-        // Título del PDF
+
+// Título del PDF
         doc.setFontSize(18);
         doc.text('Verificación Inspección de Equipos Ensamblados', 20, 20);
 
@@ -118,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.save('verificacion_inspeccion.pdf');
 
         alert('Formulario enviado correctamente');
-
     });
 
 
